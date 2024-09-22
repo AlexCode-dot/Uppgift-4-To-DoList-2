@@ -1,8 +1,9 @@
 const input = document.querySelector("#input-value");
 const listContainer = document.querySelector("#list-container");
 const taskCount = document.querySelector("#task-count");
+const addBtn = document.querySelector("#add");
 
-add.addEventListener(
+addBtn.addEventListener(
     "click",
     addTask,
     false
