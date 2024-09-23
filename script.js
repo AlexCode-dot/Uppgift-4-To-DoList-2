@@ -42,6 +42,7 @@ listContainer.addEventListener("click", function(e)
             
         }
         arrayFunction();
+        removeOne();
         saveData();
 });
 
@@ -61,6 +62,7 @@ function arrayFunction()
         toDos.push(toDoInfo);
 
         resultCounter(toDos);
+        removeOne();
     }
     console.log(toDos);
 }
@@ -72,6 +74,16 @@ const numberCompletedTasks = taskCompleted.length;
 taskCount.textContent = numberCompletedTasks;
 console.log(numberCompletedTasks);
 }
+
+function removeOne()
+{
+    if (listContainer.children.length === 0)
+        {
+            taskCount.textContent = 0;
+        }
+        
+}
+
 
 function saveData()
 {
