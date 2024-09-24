@@ -2,6 +2,7 @@ const input = document.querySelector("#input-value");
 const listContainer = document.querySelector("#list-container");
 const taskCount = document.querySelector("#task-count");
 const addBtn = document.querySelector("#add");
+const warningText = document.querySelector("#warning-text");
 
 addBtn.addEventListener(
     "click",
@@ -13,14 +14,15 @@ function addTask()
 {
     if(input.value === "") 
         {
-            alert("Write a task!");
+            warningText.innerHTML = "Write a task!";
         }
         else
         {
-            let li = document.createElement("li");
+            warningText.innerHTML = "";
+            const li = document.createElement("li");
             li.innerHTML = input.value;
             listContainer.appendChild(li);
-            let span = document.createElement("span");
+            const span = document.createElement("span");
             span.innerHTML = "\u00d7";
             li.appendChild(span);
         }
@@ -51,9 +53,9 @@ function arrayFunction()
     const toDos = [];
 
     for (let i = 0; i < listContainer.children.length; i++) {
-        let toDo = listContainer.children.item(i);
+        const toDo = listContainer.children.item(i);
 
-        let toDoInfo = 
+        const toDoInfo = 
         {
             "task": toDo.innerText,
             "completed": toDo.classList.contains("checked")
@@ -62,7 +64,6 @@ function arrayFunction()
         toDos.push(toDoInfo);
 
         resultCounter(toDos);
-        removeOne();
     }
     console.log(toDos);
 }
@@ -96,4 +97,3 @@ function showTask()
 }
 
 showTask();
-
